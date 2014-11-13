@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+        <!-- Configurações de conexão com o banco de dados -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:8080/teste</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">anderson123</property>
+
+        <!-- Pool de conexões do JDBC -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- Dialeto para SQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Permiti o gerenciamento de contexto automático de sessão do Hibernate -->
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- Cria ou atualiza o banco ao iniciar a aplicação -->
+        <property name="hbm2ddl.auto">update</property>  
+
+        <!-- Mostrar comandos SQL -->
+        <property name="show_sql">true</property>
+        
+        <!-- Classes mapeadas -->
+        <mapping class="Teste.Weka.Dominio.PrevisaoTempo"/>
+        
+
+    </session-factory>
+</hibernate-configuration>
